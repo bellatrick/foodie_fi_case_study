@@ -1,12 +1,16 @@
 # CASE STUDY: FOODIE-FI
+![image](https://github.com/bellatrick/foodie_fi_case_study/assets/74540938/776332fa-e3d5-466b-b32b-8dafff339893)
 
 ## Introduction
 
 Foodie-Fi is a subscription-based streaming service specializing in food-related content, similar to Netflix but focused exclusively on cooking shows. In 2020, Danny and his team launched this startup, offering monthly and annual subscriptions, giving customers unlimited access to exclusive food videos worldwide. Danny aimed to make data-driven decisions for investment and feature development. This case study delves into using digital subscription data to answer key business questions.
 
 There are two tables available for analysis, namely:
+![image](https://github.com/bellatrick/foodie_fi_case_study/assets/74540938/767fde02-d883-47dd-959d-f98611ceea72)
+
 
 ## Table 1: `plans`
+![image](https://github.com/bellatrick/foodie_fi_case_study/assets/74540938/164578a6-ba09-4a43-938e-740cff927e63)
 
 Customers select from various plans upon signing up for Foodie-Fi.
 
@@ -16,6 +20,7 @@ Customers select from various plans upon signing up for Foodie-Fi.
 - When customers cancel, they receive a churn plan record with a null price, and their plan remains active until the billing period ends.
 
 ## Table 2: `subscriptions`
+![image](https://github.com/bellatrick/foodie_fi_case_study/assets/74540938/9b05901e-ec86-4955-b1a8-c73b2c21de71)
 
 Customer subscriptions include the start date of their specific plan_id.
 
