@@ -6,8 +6,8 @@
 Foodie-Fi is a subscription-based streaming service specializing in food-related content, similar to Netflix but focused exclusively on cooking shows. In 2020, Danny and his team launched this startup, offering monthly and annual subscriptions, giving customers unlimited access to exclusive food videos worldwide. Danny aimed to make data-driven decisions for investment and feature development. This case study delves into using digital subscription data to answer key business questions.
 
 There are two tables available for analysis, namely:
-![image](https://github.com/bellatrick/foodie_fi_case_study/assets/74540938/767fde02-d883-47dd-959d-f98611ceea72)
 
+![image](https://github.com/bellatrick/foodie_fi_case_study/assets/74540938/767fde02-d883-47dd-959d-f98611ceea72)
 
 ## Table 1: `plans`
 ![image](https://github.com/bellatrick/foodie_fi_case_study/assets/74540938/164578a6-ba09-4a43-938e-740cff927e63)
@@ -298,6 +298,18 @@ ORDER BY trial_counts DESC;
 | 330-360 days | 1               |
 
 11. **How many customers downgraded from a pro monthly to a basic monthly plan in 2020?**
+    
+```sql
+WITH next_plan_table AS
+(
+SELECT start_date,plan_id, LEAD(plan_id,1) OVER (PARTITION BY customer_id) AS next_plan
+FROM f_view
+)
+SELECT COUNT(*) as total_customers
+FROM next_plan_table
+WHERE start_date <= '2020-12-31'
+	AND plan_id = 2 AND next_plan = 1;
+```
 
 - Answer: No customers downgraded.
 
